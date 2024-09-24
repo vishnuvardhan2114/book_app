@@ -1,7 +1,6 @@
 "use client";
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
 
 const AddBookForm = () => {
   const [title, setTitle] = useState('');
@@ -26,14 +25,14 @@ const AddBookForm = () => {
 
       if (response.ok) {
         const newBook = await response.json();
-        toast.success(`Book "${newBook.title}" added successfully!`);
+        console.log(`Book "${newBook.title}" added successfully!`);
         setTitle('');
         setAuthor('');
         setGenre('');
         setDescription('');
         router.push('/');
       } else {
-        toast.error("Failed to add the book. Please try again.");
+        console.log("Failed to add the book. Please try again.");
       }
     } catch (error) {
       console.log("addBook error: " , error);

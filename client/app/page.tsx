@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import BookForm from "../components/BookForm";
 import BookList from "../components/BookList";
-import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/navigation";
 
 type Preferences = {
@@ -58,9 +57,9 @@ export default function Home() {
 
     if (response.ok) {
       setBooks(books.filter((book) => book._id !== bookId));
-      toast.success('Book deleted successfully!');
+      console.log('Book deleted successfully!');
     } else {
-      toast.error('Failed to delete book');
+      console.log('Failed to delete book');
     }
   };
 
@@ -73,7 +72,7 @@ export default function Home() {
       setRandomBooks(data.randomBooks);
       setTotalRandomBooks(data.totalBooks);
     } else {
-      toast.error("Failed to fetch random books");
+      console.log("Failed to fetch random books");
     }
   };
 
@@ -180,7 +179,6 @@ export default function Home() {
       {randomBooks.length === 0 && (
         <p className="text-center text-white">No random books available</p>
       )}
-      <ToastContainer />
     </div>
   );
 }

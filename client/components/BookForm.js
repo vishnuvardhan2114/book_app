@@ -6,8 +6,6 @@ const BookForm = ({ onFetchRecommendations }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Create an object for preferences only if values exist
     const preferences = {};
     if (genre) preferences.genre = genre;
     if (author) preferences.author = author;

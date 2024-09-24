@@ -21,7 +21,7 @@ const UpdateBookForm = ({ bookId }) => {
         setGenre(book.genre);
         setDescription(book.description);
       } else {
-        toast.error('Failed to fetch book data');
+        console.log("Error fetching book")
       }
     };
 
@@ -42,10 +42,9 @@ const UpdateBookForm = ({ bookId }) => {
       });
 
       if (response.ok) {
-        toast.success('Book updated successfully!');
-        router.push('/'); // Redirect to home or book list
+        router.push('/'); 
       } else {
-        toast.error('Failed to update book');
+        console.log('Failed to update book');
       }
     } catch (error) {
       console.log("update book error: " , error);
