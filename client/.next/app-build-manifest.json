@@ -1,25 +1,40 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-af8cdc22385306bf.js",
+      "static/chunks/main-app-ae7eecd48b020d2e.js",
+      "static/chunks/app/_not-found/page-c3d7bfc1806ec87c.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
-    "/updateBook/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/updateBook/[id]/page.js"
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-af8cdc22385306bf.js",
+      "static/chunks/main-app-ae7eecd48b020d2e.js",
+      "static/css/f8d77b9885756548.css",
+      "static/chunks/app/layout-d30e628557b6c71a.js"
     ],
     "/addBook/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/addBook/page.js"
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-af8cdc22385306bf.js",
+      "static/chunks/main-app-ae7eecd48b020d2e.js",
+      "static/chunks/app/addBook/page-b4ab8f0458d04128.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-af8cdc22385306bf.js",
+      "static/chunks/main-app-ae7eecd48b020d2e.js",
+      "static/chunks/app/page-7753a391a2acca20.js"
+    ],
+    "/updateBook/[id]/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-af8cdc22385306bf.js",
+      "static/chunks/main-app-ae7eecd48b020d2e.js",
+      "static/chunks/app/updateBook/[id]/page-2c6f99c54e3363ea.js"
     ]
   }
 }
