@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { useEffect, useState } from "react";
 import BookForm from "../components/BookForm";
 import BookList from "../components/BookList";
@@ -17,10 +17,9 @@ type Book = {
   description: string;
 };
 
-
 export default function Home() {
   const [books, setBooks] = useState<Book[]>([]);
-  const [randomBooks, setRandomBooks] = useState<Book[]>([]); 
+  const [randomBooks, setRandomBooks] = useState<Book[]>([]);
   const [page, setPage] = useState(1);
   const [randomPage, setRandomPage] = useState(1);
   const [totalBooks, setTotalBooks] = useState(0);
@@ -30,13 +29,13 @@ export default function Home() {
 
   const fetchRecommendations = async (preferences: Preferences) => {
     const response = await fetch("https://book-app-api-iuv4.onrender.com/api/recommendations", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(preferences),
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(preferences),
     });
-
+  
     if (response.ok) {
       const data = await response.json();
       setBooks(data.recommendations);
@@ -59,7 +58,7 @@ export default function Home() {
       setBooks(books.filter((book) => book._id !== bookId));
       console.log('Book deleted successfully!');
     } else {
-      console.log('Failed to delete book');
+      console.log("Failed to delete book");
     }
   };
 
@@ -105,7 +104,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    fetchRecommendations({ genre: "fiction" });
+    fetchRecommendations({ genre: "" });
   }, [page]);
 
   useEffect(() => {
@@ -131,7 +130,11 @@ export default function Home() {
           <h2 className="text-2xl font-semibold text-center mt-6 text-white">
             Book Recommendations
           </h2>
-          <BookList books={books} onBookUpdate={handleBookUpdate} onBookDelete={handleBookDelete} />
+          <BookList
+            books={books}
+            onBookUpdate={handleBookUpdate}
+            onBookDelete={handleBookDelete}
+          />
           <div className="flex justify-center items-center mt-4">
             <button
               onClick={handlePreviousPage}
