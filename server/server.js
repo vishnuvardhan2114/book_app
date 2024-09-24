@@ -10,8 +10,25 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// CORS configuration
+const allowedOrigins = [
+  'https://book-app-frontend-gamma.vercel.app', // Your deployed frontend URL
+  'http://localhost:3000',  // Allow local development (optional)
+];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true, // If using cookies or authentication
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Route to fetch random books - place it before dynamic routes

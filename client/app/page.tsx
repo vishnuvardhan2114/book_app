@@ -30,7 +30,7 @@ export default function Home() {
   const router = useRouter();
 
   const fetchRecommendations = async (preferences: Preferences) => {
-    const response = await fetch("http://localhost:5000/api/recommendations", {
+    const response = await fetch("https://book-app-api-iuv4.onrender.com/api/recommendations", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export default function Home() {
   };
 
   const handleBookDelete = async (bookId : string) => {
-    const response = await fetch(`http://localhost:5000/api/books/${bookId}`, {
+    const response = await fetch(`https://book-app-api-iuv4.onrender.com/api/books/${bookId}`, {
       method: 'DELETE',
     });
 
@@ -66,7 +66,7 @@ export default function Home() {
 
   const fetchRandomBooks = async () => {
     const response = await fetch(
-      `http://localhost:5000/api/books/random?page=${randomPage}&limit=${limit}`
+      `https://book-app-api-iuv4.onrender.com/api/books/random?page=${randomPage}&limit=${limit}`
     );
     if (response.ok) {
       const data = await response.json();

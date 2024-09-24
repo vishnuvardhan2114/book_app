@@ -16,7 +16,7 @@ const AddBookForm = () => {
     const bookData = { title, author, genre, description };
 
     try {
-      const response = await fetch('http://localhost:5000/api/books/add', {
+      const response = await fetch('https://book-app-api-iuv4.onrender.com/api/books/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ const UpdateBookForm = ({ bookId }) => {
   useEffect(() => {
     const fetchBook = async () => {
       if (!bookId) return; // Ensure bookId is defined
-      const response = await fetch(`http://localhost:5000/api/books/${bookId}`);
+      const response = await fetch(`https://book-app-api-iuv4.onrender.com/api/books/${bookId}`);
       if (response.ok) {
         const book = await response.json();
         setTitle(book.title);
@@ -33,7 +33,7 @@ const UpdateBookForm = ({ bookId }) => {
     const updatedBook = { title, author, genre, description };
 
     try {
-      const response = await fetch(`http://localhost:5000/api/books/${bookId}`, {
+      const response = await fetch(`https://book-app-api-iuv4.onrender.com/api/books/${bookId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
