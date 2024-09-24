@@ -135,22 +135,6 @@ export default function Home() {
             onBookUpdate={handleBookUpdate}
             onBookDelete={handleBookDelete}
           />
-          <div className="flex justify-center items-center mt-4">
-            <button
-              onClick={handlePreviousPage}
-              disabled={page === 1}
-              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg mr-2 disabled:opacity-50"
-            >
-              Previous
-            </button>
-            <button
-              onClick={handleNextPage}
-              disabled={page >= Math.ceil(totalBooks / limit)}
-              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg disabled:opacity-50"
-            >
-              Next
-            </button>
-          </div>
         </>
       )}
 
