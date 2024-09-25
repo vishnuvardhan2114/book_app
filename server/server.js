@@ -10,10 +10,9 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// CORS configuration
 const allowedOrigins = [
-  'https://book-app-frontend-gamma.vercel.app', // Your deployed frontend URL
-  'http://localhost:3000',  // Allow local development (optional)
+  'https://book-app-frontend-gamma.vercel.app', 
+  'http://localhost:3000',  
 ];
 
 const corsOptions = {
@@ -24,14 +23,13 @@ const corsOptions = {
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true, // If using cookies or authentication
+  credentials: true, 
 };
 
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Route to fetch random books - place it before dynamic routes
 app.get("/api/books/random", async (req, res) => {
   const { page = 1, limit = 5 } = req.query;
 
@@ -55,9 +53,9 @@ app.get("/api/books/random", async (req, res) => {
 
 // Book routes
 app.use("/api/books", bookRoutes);
-
 // Recommendation routes
 app.use("/api/recommendations", recommendationRoutes);
+
 
 // MongoDB connection
 mongoose
@@ -68,7 +66,6 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((error) => console.log(error));
 
-// Sample route to test the server
 app.get("/", (req, res) => {
   res.send("Welcome to the Book Recommendation API!");
 });
